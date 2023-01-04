@@ -3,6 +3,7 @@ require("dotenv").config();
 require("@nomiclabs/hardhat-etherscan");
 require("./tasks/block-number");
 require("hardhat-gas-reporter");
+require("solidity-coverage");
 
 const GORELI_RPC_URL = process.env.GORELI_RPC_URL || "https://eth-goreli";
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "0xkey";

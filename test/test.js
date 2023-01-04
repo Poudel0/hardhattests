@@ -21,4 +21,14 @@ describe("Storage", function () {
     const currentValue = await storage.retrieve();
     assert.equal(currentValue.toString(), expectedValue);
   });
+  it("Should Add a person and favnumber", async function () {
+    const expectedFavNum = 5;
+    const expectedName = "Ram";
+    const updatedFavNum = await storage.addPerson(expectedName, expectedFavNum);
+    await updatedFavNum.wait(1);
+    const { favoriteNumber, name } = await storage.people(0);
+
+    assert.equal(name, expectedName);
+    assert.equal(favoriteNumber, expectedFavNum);
+  });
 });
